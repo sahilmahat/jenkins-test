@@ -12,5 +12,11 @@ pipeline{
         sh "./greet.sh"
       }
     }
+    stage("Test"){
+      steps{
+        sh 'echo "Running a fake test..."'
+        sh "test 1 -eq 1"
+      }
+    }
   }
 }
