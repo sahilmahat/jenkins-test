@@ -15,7 +15,7 @@ pipeline{
     stage("Test"){
       steps{
         sh 'echo "Running a fake test..."'
-        sh "test 1 -eq 2"
+        sh "test 1 -eq 1"
       }
     }
   }
