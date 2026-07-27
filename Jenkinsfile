@@ -23,7 +23,7 @@ pipeline{
     }
     stages("Use Secret") {
       steps {
-        sh "echo "Using secrets now...""
+        sh 'echo "Using secrets now..."'
         sh "echo $MY_SECRET"
       }
     }
