@@ -1,5 +1,8 @@
 pipeline{
   agent any
+  environment {
+    MY_SECRET = credentials("test-secret")
+  }
   stages {
     stage("Checkout Info") {
       steps {
@@ -16,6 +19,12 @@ pipeline{
       steps{
         sh 'echo "Running a fake test..."'
         sh "test 1 -eq 1"
+      }
+    }
+    stages("Use Secret") {
+      steps {
+        sh "echo "Using secrets now...""
+        sh "echo $MY_SECRET"
       }
     }
   }
