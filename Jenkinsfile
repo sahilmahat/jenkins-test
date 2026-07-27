@@ -21,7 +21,7 @@ pipeline{
         sh "test 1 -eq 1"
       }
     }
-    stages("Use Secret") {
+    stage("Use Secret") {
       steps {
         sh 'echo "Using secrets now..."'
         sh "echo $MY_SECRET"
